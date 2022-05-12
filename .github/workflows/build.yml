@@ -9,6 +9,8 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    if: github.event_name != 'pull_request' 
+    
     strategy:
       matrix:
        node-version: [12.x, 14.x, 16.x]
